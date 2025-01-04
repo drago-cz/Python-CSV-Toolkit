@@ -3,7 +3,7 @@ import pandas as pd
 
 # Step 1: Display all CSV files in the current directory and create a list
 def list_csv_files(directory="."):
-    """Displays all CSV files in the specified directory."""
+    # Displays all CSV files in the specified directory.
     csv_files = [file for file in os.listdir(directory) if file.lower().endswith(".csv")]
     for idx, file in enumerate(csv_files):
         print(f"{idx + 1}: {file}")
@@ -11,7 +11,7 @@ def list_csv_files(directory="."):
 
 # Step 2: Select a CSV file from the list
 def select_csv_file(csv_files):
-    """Allows the user to select a CSV file from the list."""
+    # Allows the user to select a CSV file from the list.
     try:
         choice = int(input("Enter the number of the file you want to open: ")) - 1
         if 0 <= choice < len(csv_files):
@@ -25,7 +25,7 @@ def select_csv_file(csv_files):
 
 # Step 3: Load the file with support for multiple delimiters
 def load_csv_with_varied_delimiters(file_path):
-    """Loads a CSV file with support for multiple delimiters (comma and semicolon)."""
+    # Loads a CSV file with support for multiple delimiters (comma and semicolon).
     delimiters = [',', ';']
     for delimiter in delimiters:
         try:
@@ -38,7 +38,7 @@ def load_csv_with_varied_delimiters(file_path):
 
 # Step 4: Display the list of columns and select a column
 def select_column(df):
-    """Displays column names and allows the user to select one."""
+    # Displays column names and allows the user to select one.
     print("Available columns:")
     for idx, column in enumerate(df.columns):
         print(f"{idx + 1}: {column}")
@@ -55,7 +55,7 @@ def select_column(df):
 
 # Step 5: Remove duplicates based on the selected column and display statistics
 def remove_duplicates_and_show_stats(df, column_name):
-    """Removes duplicate rows based on the selected column and displays statistics."""
+    # Removes duplicate rows based on the selected column and displays statistics.
     initial_row_count = len(df)
     df = df.drop_duplicates(subset=column_name)
     final_row_count = len(df)

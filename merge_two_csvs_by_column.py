@@ -113,9 +113,7 @@ def merge_files(file1, file2, column):
     return merged_df
 
 def main():
-    """
-    The main function orchestrates the CSV merging process.
-    """
+    # The main function orchestrates the CSV merging process.
     # List all CSV files in the current directory
     csv_files = list_csv_files()
 
