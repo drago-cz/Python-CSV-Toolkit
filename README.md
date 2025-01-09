@@ -25,6 +25,12 @@
   - Provides a summary report of issues found.
   - Generates a detailed text report with specific locations of the issues.
 
+- **Aggregate and Sum CSV (`aggregate_and_sum_csv.py`):**
+  - Groups data by a selected column and sums numeric values after cleaning them.
+  - Cleans numeric data by removing spaces and converting values to floats.
+  - Provides statistics on valid and invalid numeric entries.
+  - Saves the aggregated data to a new CSV file.
+
 ## Getting Started
 
 ### Prerequisites
@@ -167,6 +173,62 @@ Column: Name
 Column: Email
   Row 2: Empty value after stripping
   Row 6: Empty value after stripping
+```
+
+### 5. Aggregate and Sum CSV
+
+**Script:** `aggregate_and_sum_csv.py`
+
+**Description:** Groups data by a specified column and sums numeric values after cleaning the data.
+
+**Run the Script:**
+
+```bash
+python aggregate_and_sum_csv.py
+```
+
+**Steps:**
+
+1. The script will list all CSV files in the current directory.
+2. Select the CSV file you want to process by entering its corresponding number.
+3. Choose the column to group the data by by entering its corresponding number.
+4. Choose the column containing numeric values to sum by entering its corresponding number.
+5. The script will clean the numeric data by removing spaces, replacing commas with dots, and validating the numbers.
+6. It will aggregate the data based on the selected grouping column and sum the cleaned numeric values.
+7. The aggregated data will be saved as `export_suma.csv`.
+8. The script will display statistics of valid and invalid values and list invalid entries if any.
+
+**Example Output:**
+
+```
+List of CSV files in the directory:
+1: sales_data.csv
+2: inventory.csv
+Enter the number of the CSV file you want to process: 1
+
+Available CSV files:
+1. sales_data.csv
+2. inventory.csv
+Enter the number of the CSV file you want to process: 1
+
+Column names in the file:
+1. Product
+2. Quantity Sold
+3. Revenue
+
+Enter the column number to be used for aggregation: 1
+Enter the number of the column with the numeric values to sum them together: 3
+
+The aggregated data was saved to 'export_suma.csv'.
+
+Statistics of valid and non-valid values:
+Valid numbers: 150
+Numbers of invalid values: 3
+
+Invalid values:
+Row 10: "N/A"
+Row 25: "unknown"
+Row 47: " - "
 ```
 
 ## Acknowledgements
